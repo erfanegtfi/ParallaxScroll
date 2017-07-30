@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
-
 import com.nirhart.parallaxscroll.R;
 
-public class ParallaxScrollView extends ScrollView {
+public class ParallaxScrollView extends NestedScrollView {
 
 	private static final int DEFAULT_PARALLAX_VIEWS = 1;
 	private static final float DEFAULT_INNER_PARALLAX_FACTOR = 1.9F;
@@ -23,19 +23,19 @@ public class ParallaxScrollView extends ScrollView {
 	private float alphaFactor = DEFAULT_ALPHA_FACTOR;
 	private ArrayList<ParallaxedView> parallaxedViews = new ArrayList<ParallaxedView>();
 
-	public ParallaxScrollView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		init(context, attrs);
-	}
+    public ParallaxScrollView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init(context, attrs);
+    }
 
-	public ParallaxScrollView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		init(context, attrs);
-	}
+    public ParallaxScrollView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs);
+    }
 
-	public ParallaxScrollView(Context context) {
-		super(context);
-	}
+    public ParallaxScrollView(Context context) {
+        super(context);
+    }
 	
 	protected void init(Context context, AttributeSet attrs) {
 		TypedArray typeArray = context.obtainStyledAttributes(attrs, R.styleable.ParallaxScroll);
